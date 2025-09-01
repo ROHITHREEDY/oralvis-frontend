@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
+const API_BASE = "https://<your-render-backend-url>";
 
 export default function App() {
   const [user, setUser] = useState(() => {

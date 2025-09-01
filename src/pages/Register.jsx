@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
-export default function Register() {
+export default function Register({ apiBase }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("technician");
@@ -15,7 +15,7 @@ export default function Register() {
     setErr("");
     setMsg("");
     try {
-      await axios.post("http://localhost:5000/api/auth/register", { email, password, role });
+      await axios.post(`${apiBase}/api/auth/register`, { email, password, role });
       setMsg("Registered! Please login.");
       setTimeout(() => navigate("/login"), 1000);
     } catch (error) {
